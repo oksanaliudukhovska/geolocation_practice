@@ -1,4 +1,6 @@
+import "../styles.css";
 
+window.addEventListener("load", function(){
 
 let granHotel = document.getElementById('granHotel');
 let grandHyatt = document.getElementById('btnHaytt');
@@ -99,3 +101,4 @@ function showMap2() {
              let marker4 = L.marker(LatLng4);
              marker4.addTo(map4);
  }
+});
