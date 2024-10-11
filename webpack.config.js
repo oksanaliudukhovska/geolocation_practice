@@ -6,10 +6,15 @@ const path = require('path');
 
 module.exports = {
   entry: './scr/js/main.js',
+  mode: 'development',
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+  devServer: {
+    static: './dist',  
+    hot: false,
   },
   plugins: [new HtmlWebpackPlugin({
     template: path.resolve(__dirname, 'scr', 'index.html'),
@@ -37,7 +42,7 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    contentBase: './dist',  
-  },
+// optimization: {
+//     runtimeChunk: 'single',
+// }
 };
